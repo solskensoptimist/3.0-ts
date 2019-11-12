@@ -1,14 +1,14 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
-import LoginComponent from 'components/login/';
-import ProspectComponent from 'components/prospect/';
-import SettingsComponent from 'components/settings/';
+import {LoginComponent} from 'components/login/';
+import {ProspectComponent} from 'components/prospect/';
+import {SettingsComponent} from 'components/settings/';
 
 /**
  * Defining routes. Adding a component to a specific route.
  * @constructor
  */
-const Router = () => {
+export const Router = () => {
     // Hämta user store state, returnera olika routes beroende på inloggad eller ej.
     return (
         <Switch>
@@ -18,5 +18,3 @@ const Router = () => {
         </Switch>
     );
 };
-
-export default Router;

@@ -1,7 +1,13 @@
-import {createStore, combineReducers} from 'redux';
-import groupsReducer from 'store/groups/';
-import settingsReducer from 'store/settings/';
-import userReducer from 'store/user/';
+import {createStore, combineReducers, Store} from 'redux';
+import {AppState} from 'store/app_state';
+import {groupsReducer} from 'store/groups/reducer';
+import {userReducer} from 'store/user/reducer';
+import {User} from './models/user';
+
+// App state.
+interface AppState {
+    user: User,
+}
 
 // All reducers combined.
 const reducer = combineReducers({
@@ -11,11 +17,11 @@ const reducer = combineReducers({
 });
 
 // Creating redux store.
-const store = createStore(reducer);
+const store: Store<AppState> = createStore(reducer);
 
 // Subscription.
 store.subscribe(() => {
     return console.log("Store", store.getState());
 });
 
-export default store;
+export {store};

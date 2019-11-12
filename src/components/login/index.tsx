@@ -1,15 +1,13 @@
 import React from 'react';
 import store from 'store';
-import userActionTypes from 'store/user/action_types';
+import {userLogin} from 'store/user/actions';
 
-const LoginComponent = () => {
+export const LoginComponent = () => {
     const handleSubmit = () => {
-        store.dispatch({type: userActionTypes.USER_LOGIN, payload: {
-            data: {
-                email: 'peter.persson@bilvision.se',
-                password: 'ninja',
-            }
-        }});
+        store.dispatch(userLogin({
+            email: 'peter.persson@bilvision.se',
+            password: 'ninja',
+        }));
     };
 
     return (
@@ -20,5 +18,3 @@ const LoginComponent = () => {
         </div>
     );
 };
-
-export default LoginComponent;

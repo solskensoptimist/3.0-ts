@@ -12,7 +12,7 @@ interface Request {
  *
  * @param payload
  */
-const request = (payload: Request) => {
+export const request = (payload: Request) => {
     return new Promise((resolve, reject) => {
         let params = {
             url: payload.url,
@@ -39,5 +39,3 @@ const request = (payload: Request) => {
         })
     });
 };
-
-export default request;

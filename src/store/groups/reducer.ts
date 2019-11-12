@@ -1,5 +1,4 @@
-import store from 'store';
-import groupsActionTypes from 'store/groups/action_types/';
+import {actionTypes} from 'store/groups/actions/';
 import request from 'helpers/request_helper';
 
 interface Action {
@@ -88,7 +87,7 @@ const _fetchGroups = (payload: Request) => {
  * @param action
  * @returns {*}
  */
-const groupsReducer = (state=[], action: Action) => {
+export const groupsReducer = (state=[], action: Action) => {
     switch(action.type) {
         // case groupsConstants.GROUPS_ADD_GROUP: {
         //     addGroup(state, action.payload);
@@ -98,7 +97,7 @@ const groupsReducer = (state=[], action: Action) => {
         //     editGroup(state, action.payload);
         //     return state;
         // }
-        case groupsActionTypes.GROUPS_GET_GROUPS: {
+        case actionTypes.GROUPS_GET_GROUPS: {
             getGroups(action.payload);
             return state;
         }
@@ -107,5 +106,3 @@ const groupsReducer = (state=[], action: Action) => {
         }
     }
 };
-
-export default groupsReducer;

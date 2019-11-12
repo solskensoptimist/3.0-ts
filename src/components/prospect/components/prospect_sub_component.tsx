@@ -1,11 +1,9 @@
 import React from 'react';
 
-const ProspectSubComponent = () => {
+export const ProspectSubComponent = () => {
     return (
         <div>
             Prospektera sub-komponent
         </div>
     );
 };
-
-export default ProspectSubComponent;

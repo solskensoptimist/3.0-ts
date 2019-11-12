@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/css/main.css';
-import store from 'store';
+import {store} from 'store';
 import {Provider} from 'react-redux';
-import AppHolder from './app-holder';
+import {AppHolder) from './app-holder';
 import {BrowserRouter} from 'react-router-dom';
 
 /**

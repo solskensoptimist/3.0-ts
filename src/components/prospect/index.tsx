@@ -1,7 +1,7 @@
 import React from 'react';
-import ProspectSubComponent from './components/prospect_sub_component';
+import {ProspectSubComponent} from './components/prospect_sub_component';
 
-const ProspectComponent = () => {
+export const ProspectComponent = () => {
     return (
         <div>
             <div>
@@ -11,5 +11,3 @@ const ProspectComponent = () => {
         </div>
     );
 };
-
-export default ProspectComponent;

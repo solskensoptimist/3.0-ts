@@ -4,7 +4,7 @@ import {NavLink} from 'react-router-dom';
 /**
  * Navigation component.
  */
-const Navigation = () => {
+export const Navigation = () => {
     return (
         <nav>
             <ul>
@@ -17,5 +17,3 @@ const Navigation = () => {
         </nav>
     );
 };
-
-export default Navigation;

@@ -1,5 +1,5 @@
-import userActionTypes from 'store/user/action_types';
-import request from 'helpers/request_helper';
+import {actionTypes} from 'store/user/actions';
+import {request} from 'helpers/request_helper';
 
 interface Action {
     type: string,
@@ -37,9 +37,9 @@ const userLogin = (state: Array, payload: Request) => {
  * @param action
  * @returns {*}
  */
-const userReducer = (state=[], action: Action) => {
+export const userReducer = (state=[], action: Action) => {
     switch(action.type) {
-        case userActionTypes.USER_LOGIN: {
+        case actionTypes.USER_LOGIN: {
             userLogin(state, action.payload);
             return state;
         }
@@ -48,5 +48,3 @@ const userReducer = (state=[], action: Action) => {
         }
     }
 };
-
-export default userReducer;
