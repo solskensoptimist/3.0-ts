@@ -1,12 +1,24 @@
-import userConstants from 'store/user/constants';
+import userActionTypes from 'store/user/action_types';
 import request from 'helpers/request_helper';
+
+interface Action {
+    type: string,
+    payload: Request,
+}
+
+interface Request {
+    data: object,
+    method: "get" | "GET" | "delete" | "DELETE" | "head" | "HEAD" | "options" | "OPTIONS" | "post" | "POST" | "put" | "PUT" | "patch" | "PATCH",
+    url: string,
+}
+
 
 /**
  *
  * @param state
  * @param payload
  */
-const userLogin = (state, payload) => {
+const userLogin = (state: Array, payload: Request) => {
     payload.url = 'login';
     payload.method = 'post';
     request(payload)
@@ -25,10 +37,10 @@ const userLogin = (state, payload) => {
  * @param action
  * @returns {*}
  */
-const userReducer = (state=[], action) => {
+const userReducer = (state=[], action: Action) => {
     switch(action.type) {
-        case userConstants.USER_LOGIN: {
-            userLogin(state, action.payload)
+        case userActionTypes.USER_LOGIN: {
+            userLogin(state, action.payload);
             return state;
         }
         default: {

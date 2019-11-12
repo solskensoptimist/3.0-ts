@@ -1,6 +1,6 @@
 import keyMirror from 'keymirror';
 
-const index = keyMirror({
+const actionTypes = keyMirror({
     GROUPS_ADD_GROUP: null,
     GROUPS_EDIT_GROUP: null,
     GROUPS_GET_GROUPS: null,
@@ -8,4 +8,4 @@ const index = keyMirror({
     GROUPS_SHARE_GROUP: null,
 });
 
-export default index;
+export default actionTypes;

@@ -1,14 +1,18 @@
 import axios from 'axios';
 import _ from 'underscore';
 
+interface Request {
+    data: object,
+    method: "get" | "GET" | "delete" | "DELETE" | "head" | "HEAD" | "options" | "OPTIONS" | "post" | "POST" | "put" | "PUT" | "patch" | "PATCH",
+    url: string,
+}
+
 /**
  * Helper to make requests.
  *
- * @param payload.data
- * @param payload.method
- * @param payload.url
+ * @param payload
  */
-const request = (payload) => {
+const request = (payload: Request) => {
     return new Promise((resolve, reject) => {
         let params = {
             url: payload.url,

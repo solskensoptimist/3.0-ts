@@ -1,6 +1,6 @@
 import keyMirror from 'keymirror';
 
-const index = keyMirror({
+const actionTypes = keyMirror({
     SETTINGS_BULK_LEADS: null,
     SETTINGS_GET_SETTINGS: null,
     SETTINGS_GET_USERS: null,
@@ -11,4 +11,4 @@ const index = keyMirror({
     SETTINGS_UPDATE_LOCAL_STORAGE: null,
 });
 
-export default index;
+export default actionTypes;

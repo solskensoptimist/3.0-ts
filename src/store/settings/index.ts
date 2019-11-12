@@ -1,3 +1,7 @@
+interface Action {
+    type: string,
+}
+
 
 /**
  * Reducer for settings.
@@ -5,7 +9,7 @@
  * @param action
  * @returns {*}
  */
-const settingsReducer = (state=[], action) => {
+const settingsReducer = (state=[], action: Action) => {
     switch(action.type) {
         // case "ADD": {
         //     return add(initialState, action.payload);

@@ -1,7 +1,7 @@
 import keyMirror from 'keymirror';
 
-const constants = keyMirror({
+const actionTypes = keyMirror({
     USER_LOGIN: null,
 });
 
-export default constants;
+export default actionTypes;

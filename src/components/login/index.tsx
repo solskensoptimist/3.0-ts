@@ -1,11 +1,10 @@
 import React from 'react';
 import store from 'store';
-import userConstants from 'store/user/constants';
+import userActionTypes from 'store/user/action_types';
 
 const LoginComponent = () => {
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        store.dispatch({type: userConstants.USER_LOGIN, payload: {
+    const handleSubmit = () => {
+        store.dispatch({type: userActionTypes.USER_LOGIN, payload: {
             data: {
                 email: 'peter.persson@bilvision.se',
                 password: 'ninja',
