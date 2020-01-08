@@ -6,6 +6,6 @@ npm install
 
 npm run create-links
 
-npm run sass for styles
+npm run sass (for styles)
 
 npm start

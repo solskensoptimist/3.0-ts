@@ -1,6 +1,6 @@
 import React from 'react';
-import store from 'store';
-import {userLogin} from 'store/user/actions';
+import {store} from 'store';
+import {userLogin} from 'store/user_old/actions';
 
 export const LoginComponent = () => {
     const handleSubmit = () => {

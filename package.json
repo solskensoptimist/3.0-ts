@@ -24,6 +24,7 @@
     "react-scripts": "3.2.0",
     "redux": "^4.0.4",
     "shared_helpers": "git+ssh://git@gitlab.com:bilprospekt/bilp-shared/bilprospekt-shared-helpers.git",
+    "typesafe-actions": "^5.1.0",
     "typescript": "3.7.2",
     "underscore": "^1.9.1"
   },

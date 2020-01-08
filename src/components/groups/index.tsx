@@ -1,9 +1,9 @@
 import React from 'react';
-import store from 'store';
-import {getGroups} from 'store/groups/actions';
-import {SettingsSubComponent} from './components/settings_sub_component';
+import {store} from 'store';
+import {getGroups} from 'store/groups_old/actions';
+import {GroupsSubComponent} from './subcomponents/groups_sub_component';
 
-export class SettingsComponent extends React.Component {
+export class GroupsComponent extends React.Component {
     componentDidMount() {
         store.dispatch(getGroups({
             data: {
@@ -16,9 +16,9 @@ export class SettingsComponent extends React.Component {
         return (
             <div>
                 <div>
-                Inställningar huvud-komponent
+                Groups huvud-komponent
                 </div>
-                <SettingsSubComponent />
+                <GroupsSubComponent />
             </div>
         );
     }

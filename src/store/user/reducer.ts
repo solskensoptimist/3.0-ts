@@ -1,47 +1,28 @@
-import {actionTypes} from 'store/user/actions';
-import {request} from 'helpers/request_helper';
+import {actionTypes} from './actions';
 
-interface Action {
-    type: string,
-    payload: Request,
-}
-
-interface Request {
+export interface UserState {
     data: object,
-    method: "get" | "GET" | "delete" | "DELETE" | "head" | "HEAD" | "options" | "OPTIONS" | "post" | "POST" | "put" | "PUT" | "patch" | "PATCH",
-    url: string,
+    colleagues: Array<object>,
+    connections: Array<object>
 }
 
-
-/**
- *
- * @param state
- * @param payload
- */
-const userLogin = (state: Array, payload: Request) => {
-    payload.url = 'login';
-    payload.method = 'post';
-    request(payload)
-    .then((res) => {
-        console.log('res', res.data);
-        // Sätt user objekt i store data?
-    })
-    .catch((err) => {
-        console.error('Error when logging in: ', err);
-    });
+const initialState: UserState = {
+    data: {},
+    colleagues: [],
+    connections: [],
 };
 
-/**
- * Reducer for settings.
- * @param state
- * @param action
- * @returns {*}
- */
-export const userReducer = (state=[], action: Action) => {
+interface ActionUserLogin {
+    type: 'USER_LOGIN',
+    payload: object,
+}
+
+type Actions =  ActionUserLogin
+
+export const userReducer = (state = initialState, action: Actions) => {
     switch(action.type) {
         case actionTypes.USER_LOGIN: {
-            userLogin(state, action.payload);
-            return state;
+            return {}
         }
         default: {
             return state;

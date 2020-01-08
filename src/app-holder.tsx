@@ -1,9 +1,9 @@
 import React from 'react';
-import Router from './router/';
-import {Navigation} from './components/navigation';
+import {Router} from './router/';
+import {Navigation} from 'components/navigation';
 
 /**
- * Root component which holds all other components.
+ * Root component which holds all other subcomponents.
  */
 export const AppHolder = () => {
     return (

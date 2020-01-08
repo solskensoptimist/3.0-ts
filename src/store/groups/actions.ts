@@ -1,11 +1,11 @@
+import { action } from 'typesafe-actions';
+
 export enum actionTypes {
-    ADD_GROUP,
-    EDIT_GROUP,
-    GET_GROUPS,
-    REMOVE_GROUP,
-    SHARE_GROUP,
+    GET_GROUPS = 'GET_GROUPS',
+    REMOVE_GROUP = 'REMOVE_GROUP',
 }
 
-export const getGroups = (payload) => {
-    return {type: GROUPS_GET_GROUPS, payload};
+export const groupsActions = {
+    getGroups: (type: string) => action(actionTypes.GET_GROUPS, type),
+    removeGroup: (id: string) => action(actionTypes.REMOVE_GROUP, id),
 };

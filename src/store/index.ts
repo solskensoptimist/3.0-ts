@@ -1,18 +1,16 @@
 import {createStore, combineReducers, Store} from 'redux';
-import {AppState} from 'store/app_state';
-import {groupsReducer} from 'store/groups/reducer';
-import {userReducer} from 'store/user/reducer';
-import {User} from './models/user';
+import {groupsReducer, GroupsState} from 'store/groups/reducer';
+import {userReducer, UserState} from 'store/user/reducer';
 
 // App state.
 interface AppState {
-    user: User,
+    groups: GroupsState,
+    user: UserState,
 }
 
 // All reducers combined.
 const reducer = combineReducers({
     groups: groupsReducer,
-    settings: settingsReducer,
     user: userReducer,
 });
 
