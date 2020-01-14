@@ -8,7 +8,7 @@ interface Request {
 }
 
 /**
- * Helper to make requests.
+ * Helper to make  requests.
  *
  * @param payload
  */
@@ -32,7 +32,7 @@ export const request = (payload: Request) => {
 
         axios(params)
         .then((res) => {
-            resolve(res);
+            resolve(res.data);
         })
         .catch((err) => {
             reject(err);

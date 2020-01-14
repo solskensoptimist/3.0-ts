@@ -1,19 +1,36 @@
 import React from 'react';
-import {store} from 'store';
+import {request} from 'helpers/request_helper';
 
-export const LoginComponent = () => {
-    const handleSubmit = () => {
-        // store.dispatch(userActions.userLogin({
-        //     email: 'peter.persson@bilvision.se',
-        //     password: 'ninja',
-        // }));
-    };
+class LoginComponent extends React.Component {
+    constructor(props: any) {
+        super(props);
 
-    return (
-        <div>
-            <div onClick={handleSubmit}>
-                Klicka här för att logga in.
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleSubmit() {
+        request({
+            data: {
+                email: 'peter.persson@bilvision.se',
+                password: 'ninja',
+            },
+            method: 'post',
+            url: 'login',
+        })
+        .then((data) => {
+            console.log('userObject:', data);
+        });
+    }
+
+    render() {
+        return (
+            <div>
+                <div onClick={this.handleSubmit}>
+                    Klicka här för att logga in.
+                </div>
             </div>
-        </div>
-    );
+        );
+    }
 };
+
+export {LoginComponent};
