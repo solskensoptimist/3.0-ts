@@ -11,7 +11,7 @@ export const Navigation = () => {
                 <li>
                     <NavLink to='/inloggning'>Logga in</NavLink>
                     <NavLink to='/prospektera'>Prospektera</NavLink>
-                    <NavLink to='/installningar'>Inställningar</NavLink>
+                    <NavLink to='/grupper'>Grupper</NavLink>
                 </li>
             </ul>
         </nav>

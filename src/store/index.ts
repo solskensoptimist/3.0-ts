@@ -3,7 +3,7 @@ import {groupsReducer, GroupsState} from 'store/groups/reducer';
 import {userReducer, UserState} from 'store/user/reducer';
 
 // App state.
-interface AppState {
+export interface AppState {
     groups: GroupsState,
     user: UserState,
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 import {LoginComponent} from 'components/login/';
 import {ProspectComponent} from 'components/prospect/';
-import {GroupsComponent} from 'components/groups/';
+import GroupsComponent from 'components/groups/';
 
 /**
  * Defining routes. Adding a component to a specific route.

@@ -1,9 +1,9 @@
-import {actionTypes} from './actions';
+import {Actions, actionTypes} from './actions';
 
 export interface UserState {
     data: object,
-    colleagues: Array<object>,
-    connections: Array<object>
+    colleagues: Array<any>,
+    connections: Array<any>
 }
 
 const initialState: UserState = {
@@ -12,17 +12,12 @@ const initialState: UserState = {
     connections: [],
 };
 
-interface ActionUserLogin {
-    type: 'USER_LOGIN',
-    payload: object,
-}
-
-type Actions =  ActionUserLogin
-
 export const userReducer = (state = initialState, action: Actions) => {
     switch(action.type) {
         case actionTypes.USER_LOGIN: {
-            return {}
+            return {
+                ...state,
+            }
         }
         default: {
             return state;

@@ -1,13 +1,12 @@
 import React from 'react';
 import {store} from 'store';
-import {userLogin} from 'store/user_old/actions';
 
 export const LoginComponent = () => {
     const handleSubmit = () => {
-        store.dispatch(userLogin({
-            email: 'peter.persson@bilvision.se',
-            password: 'ninja',
-        }));
+        // store.dispatch(userActions.userLogin({
+        //     email: 'peter.persson@bilvision.se',
+        //     password: 'ninja',
+        // }));
     };
 
     return (

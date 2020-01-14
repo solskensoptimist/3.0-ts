@@ -1,8 +1,8 @@
-import {actionTypes} from './actions';
+import {Actions, actionTypes} from './actions';
 
 export interface GroupsState {
-    dealer: Array<object>,
-    region: Array<object>,
+    dealer: Array<any>,
+    region: Array<any>,
 }
 
 const initialState: GroupsState = {
@@ -10,23 +10,12 @@ const initialState: GroupsState = {
     region: [],
 };
 
-interface ActionGetGroups {
-    type: 'GET_GROUPS',
-    payload: string,
-}
-
-interface ActionRemoveGroup {
-    type: 'REMOVE_GROUP',
-    payload: string,
-}
-
-type Actions =  ActionGetGroups |
-                ActionRemoveGroup
-
 export const groupsReducer = (state = initialState, action: Actions) => {
     switch(action.type) {
         case actionTypes.GET_GROUPS: {
+            console.log('action.payload:', action.payload);
             return {
+                ...state,
                 dealer: [...state.dealer, action.payload],
                 region: [...state.region, action.payload],
             }
