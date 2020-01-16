@@ -1,4 +1,4 @@
-import {Actions, actionTypes} from './actions';
+import {Actions, userActionTypes} from './actions';
 
 export interface UserState {
     data: object,
@@ -14,9 +14,10 @@ const initialState: UserState = {
 
 export const userReducer = (state = initialState, action: Actions) => {
     switch(action.type) {
-        case actionTypes.USER_LOGIN: {
+        case userActionTypes.USER_LOGIN: {
             return {
                 ...state,
+                data: action.payload
             }
         }
         default: {

@@ -1,4 +1,4 @@
-import {Actions, actionTypes} from './actions';
+import {Actions, groupsActionTypes} from './actions';
 
 export interface GroupsState {
     dealer: Array<any>,
@@ -12,13 +12,9 @@ const initialState: GroupsState = {
 
 export const groupsReducer = (state = initialState, action: Actions) => {
     switch(action.type) {
-        case actionTypes.GET_GROUPS: {
+        case groupsActionTypes.GET_GROUPS: {
             console.log('action.payload:', action.payload);
-            return {
-                ...state,
-                dealer: [...state.dealer, action.payload],
-                region: [...state.region, action.payload],
-            }
+            return state // Uppdatera grupper här... (hur gör för olika grupper?)
         }
         default: {
             return state;

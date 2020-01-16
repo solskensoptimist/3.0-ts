@@ -1,16 +1,8 @@
-// interface Request {
-//     data: Credentials,
-//         method: "get" | "GET" | "delete" | "DELETE" | "head" | "HEAD" | "options" | "OPTIONS" | "post" | "POST" | "put" | "PUT" | "patch" | "PATCH",
-//         url: string,
-// }
-//
-//
-// interface Credentials {
-//     email: string,
-//         password: string,
-// }
+/*
+Här ska jag ha alla metoder som hanterar grupper... se hurdetta ser ut idag (det ligger uppdelat i flera stores)
 
-// Lägg alla funktioner här som i sin tur anropar actions.. SE EXEMPEL:
+ */
+
 
 // import {fetchProductsPending, fetchProductsSuccess, fetchProductsError} from 'actions';
 //

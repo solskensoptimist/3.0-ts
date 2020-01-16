@@ -1,7 +1,7 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 import {LoginComponent} from 'components/login/';
-import {ProspectComponent} from 'components/prospect/';
+import ProspectComponent from 'components/prospect/';
 import GroupsComponent from 'components/groups/';
 
 /**
@@ -9,7 +9,6 @@ import GroupsComponent from 'components/groups/';
  * @constructor
  */
 export const Router = () => {
-    // Hämta user_old store state, returnera olika routes beroende på inloggad eller ej.
     return (
         <Switch>
             <Route exact path="/prospektera" component={ProspectComponent} />

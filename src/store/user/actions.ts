@@ -1,15 +1,13 @@
-export enum actionTypes {
+export enum userActionTypes {
     USER_LOGIN = 'USER_LOGIN',
-}
-
-interface UserLogin {
-    email: string,
-    password: string,
 }
 
 interface ActionUserLogin {
     type: 'USER_LOGIN',
-    payload: UserLogin,
+    payload: {
+        email: string,
+        password: string,
+    },
 }
 
 export type Actions =  ActionUserLogin

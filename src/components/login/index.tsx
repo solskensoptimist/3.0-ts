@@ -1,5 +1,5 @@
 import React from 'react';
-import {request} from 'helpers/request_helper';
+import {userLogin} from 'store/user/tasks';
 
 class LoginComponent extends React.Component {
     constructor(props: any) {
@@ -8,17 +8,10 @@ class LoginComponent extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleSubmit() {
-        request({
-            data: {
-                email: 'peter.persson@bilvision.se',
-                password: 'ninja',
-            },
-            method: 'post',
-            url: 'login',
-        })
-        .then((data) => {
-            console.log('userObject:', data);
+    async handleSubmit() {
+        await userLogin({
+            email: 'peter.persson@bilvision.se',
+            password: 'ninja',
         });
     }
 

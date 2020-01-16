@@ -2,24 +2,22 @@ import React from 'react';
 import {Dispatch} from 'redux';
 import {connect} from 'react-redux';
 import {AppState} from 'store';
-import {actionTypes} from 'store/groups/actions';
+import {groupsActionTypes} from 'store/groups/actions';
+import {GroupsState} from 'store/groups/reducer';
 import {GroupsSubComponent} from './subcomponents/groups_sub_component';
 
 type Props = {
     getGroups: Function,
 };
 
-type State = {
-    dealer: Array<any>,
-    region: Array<any>,
-};
-
-class GroupsComponent extends React.Component<Props, State> {
+class GroupsComponent extends React.Component<Props, GroupsState> {
     constructor(props: any) {
         super(props);
 
         this.getGroups = this.getGroups.bind(this);
     }
+
+    // SKa byggas om obv... när ska vi hämta grupper? componentDidUpdate, eller när en användare loggar in?
     getGroups() {
         this.props.getGroups('dealer');
     }
@@ -45,7 +43,7 @@ const MapStateToProps = (state: AppState) => {
 
 const MapDispatchToProps = (dispatch: Dispatch) => {
     return {
-        getGroups: (type: string) => { dispatch({ type: actionTypes.GET_GROUPS, payload: type }) },
+        getGroups: (type: string) => { dispatch({ type: groupsActionTypes.GET_GROUPS, payload: type }) },
     };
 
 };
